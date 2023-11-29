@@ -22,14 +22,17 @@ class MyScene extends Phaser.Scene {
         // taroの画像を物理演算を持った画像にする
         const taro = this.physics.add.image(D_WIDTH/3, D_HEIGHT*4/5, 'taro');
         this.taro = taro
-        
-        // this.add.image(D_WIDTH/2, D_HEIGHT/2, 'taro');
+        this.taro.angle = 0
+
         this.text = this.add.text(10, 10, 'Scene 1').setFontSize(32).setColor('#ff0');
     }
     
     //   毎フレーム実行される繰り返し処理
     update(time, delta) {
-        this.taro.setVelocityX(200);
-        this.taro.setVelocityY(-200);
+         // 回転角度を更新
+         this.taro.angle += 5;
+
+        // this.taro.setVelocityX(200);
+        // this.taro.setVelocityY(-200);
    }
 }
